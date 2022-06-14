@@ -2,7 +2,7 @@
 <hr>
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="card" *ngFor="let heroe of heroes">
+    <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let id = index">
         <img [src]="this.heroe.img" class="card-img-top" [alt]="this.heroe.nombre">
         <div class="card-body">
             <h5 class="card-title">{{ this.heroe.nombre }}</h5>
@@ -10,8 +10,9 @@
             <p class="card-text"> <small class="text-muted">{{ this.heroe.aparicion }}</small></p>
         </div>
         <div class="d-grid gap-2">
-            <button class="btn btn-secondary btn-lg" style="margin-bottom: 10px;" type="button">Ver más...</button>
+            <button (click)="verHeroe(id)" class="btn btn-secondary btn-lg" style="margin-bottom: 10px;" type="button">Ver más...</button>
         </div>
+        <!-- <a [routerLink]="['/heroe',id]" class="btn btn-outline-primary">Ver más link...</a> -->
     </div>
 </div>
 
