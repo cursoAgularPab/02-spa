@@ -2,18 +2,35 @@
 <hr>
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-        <div class="card">
-            <img src="assets/img/aquaman.png" class="card-img-top" alt="...">
+    <div class="card" *ngFor="let heroe of heroes">
+        <img [src]="this.heroe.img" class="card-img-top" [alt]="this.heroe.nombre">
+        <div class="card-body">
+            <h5 class="card-title">{{ this.heroe.nombre }}</h5>
+            <p class="card-text">{{ this.heroe.bio }}</p>
+            <p class="card-text"> <small class="text-muted">{{ this.heroe.aparicion }}</small></p>
+        </div>
+        <div class="d-grid gap-2">
+            <button class="btn btn-secondary btn-lg" style="margin-bottom: 10px;" type="button">Ver más...</button>
+        </div>
+    </div>
+</div>
+
+<!--  
+
+<div class="row row-cols-3 row-cols-md-3 g-4">
+    <div class="row">
+        <div class=" card h-100" *ngFor="let heroe of heroes">
+            <img [src]="this.heroe.img" class="card-img-top" [alt]="this.heroe.nombre">
             <div class="card-body">
-                <h5 class="card-title">Card title that wraps to a new line</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-grid gap-2">
-                    <button type="button" class=" btn btn-secondary btn-lg btn-block">
-                        Ver más...
-                    </button>
+                <h5 class="card-title">{{ this.heroe.nombre }}</h5>
+                <p class="card-text">{{ this.heroe.bio }}</p>
+                <p class="card-text"> <small class="text-muted">{{ this.heroe.aparicion }}</small></p>
+                <div class="d-grid gap-2 sticky-bottom">
+                    <button class="btn btn-secondary btn-lg" type="button">Ver más...</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+-->
